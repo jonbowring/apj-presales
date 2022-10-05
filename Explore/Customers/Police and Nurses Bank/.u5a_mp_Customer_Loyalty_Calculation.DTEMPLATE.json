@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "cExZ3fVizCueQDFxVz8bwo",
+    "id" : "6v72bcgNBODl8b23sdCJks",
     "name" : "u5a_mp_Customer_Loyalty_Calculation",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,14 +9,14 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C17000000000012"
+        "repoHandle" : "011Q6C17000000000014"
       },
       "contextAttributes" : [ {
         "name" : "id",
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "This is a loyalty calculation",
+        "description" : "This is a DevOps example",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }

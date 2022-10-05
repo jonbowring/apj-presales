@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "4hARo85UKFtlicnVlWvjSQ",
+    "id" : "0pgfkQYWogyjMnRLOHe0Uw",
     "name" : "cnx-svc-CBA-Elasticsearch",
     "type" : "AI_SERVICE_CONNECTOR",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "5v8SQDn5Smbduaa-gt-460543-2022-10-05T06:44:35.918Z::svc.xml"
+        "repoHandle" : "y2uI5CUP9WYVMPI-gt-15412481-2022-10-05T07:07:13.982Z::svc.xml"
       },
       "contextAttributes" : null,
       "additionalInfo" : {

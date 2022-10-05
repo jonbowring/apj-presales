@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>XqfOZ3NjDg8SOlA-gt-460527-2022-10-05T06:44:35.795Z::svc.xml</types1:EntryId>
+      <types1:EntryId>yqAOclkZ2sBsoZd-gt-15412465-2022-10-05T07:07:13.908Z::svc.xml</types1:EntryId>
       <types1:Name>cnx-svc-C360-Merge</types1:Name>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description/>
@@ -11,9 +11,8 @@
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jon.snow.09.2022@sharklasers.com</types1:CreatedBy>
-      <types1:CreationDate>2022-10-05T06:44:36Z</types1:CreationDate>
-      <types1:ModifiedBy>jon.snow.09.2022@sharklasers.com</types1:ModifiedBy>
-      <types1:ModificationDate>2022-10-05T06:46:42Z</types1:ModificationDate>
+      <types1:CreationDate>2022-10-05T07:07:14Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -474,8 +473,8 @@
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>9gDGfNS8EDSkY5keNJxmOE</types1:GUID>
+      <types1:GUID>bXjk5VSjBO4h5mMqO28XOP</types1:GUID>
       <types1:DisplayName>cnx-svc-C360-Merge</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-10-05T06:46:50.341Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-10-05T07:07:20.192Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

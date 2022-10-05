@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "6p7TcjpG9Wyi5ljAI4WDqo",
+    "name" : "Customers",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "This project contains tested and production-ready customer use cases",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

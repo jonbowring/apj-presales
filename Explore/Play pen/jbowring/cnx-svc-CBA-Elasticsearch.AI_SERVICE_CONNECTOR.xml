@@ -1,0 +1,201 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>5v8SQDn5Smbduaa-gt-460543-2022-10-05T06:44:35.918Z::svc.xml</types1:EntryId>
+      <types1:Name>cnx-svc-CBA-Elasticsearch</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jon.snow.09.2022@sharklasers.com</types1:CreatedBy>
+      <types1:CreationDate>2022-10-05T06:44:36Z</types1:CreationDate>
+      <types1:ModifiedBy>jon.snow.09.2022@sharklasers.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-10-05T06:46:42Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="cnx-svc-CBA-Elasticsearch"
+                            label=""
+                            name="cnx-svc-CBA-Elasticsearch"
+                            uuid="c9163d4c-5676-4176-932a-244c43146215">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="localhost:9200"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="search"
+                       failOnError="true"
+                       forSearch="false"
+                       label="search"
+                       maxRedirects="100"
+                       name="search"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="query"
+                                nogen="true"
+                                required="false"
+                                testWith="name:*jane*"
+                                type="string"/>
+                     <parameter name="index"
+                                nogen="true"
+                                required="false"
+                                testWith="twitter"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/{$index}/_search?q={$query}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="document"
+                       failOnError="true"
+                       forSearch="false"
+                       label="addTweet"
+                       maxRedirects="100"
+                       name="addTweet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="index"
+                                nogen="true"
+                                required="false"
+                                testWith="twitter"
+                                type="string"/>
+                     <parameter name="name"
+                                nogen="true"
+                                required="false"
+                                testWith="janeSmith"
+                                type="string"/>
+                     <parameter name="date"
+                                nogen="true"
+                                required="false"
+                                testWith="2022-07-07"
+                                type="date"/>
+                     <parameter name="text"
+                                nogen="true"
+                                required="false"
+                                testWith="Is there any loyalty/discount for people that have been CommBank customers their whole lives?"
+                                type="string"/>
+                     <parameter name="hashTag"
+                                nogen="true"
+                                required="false"
+                                testWith="#CBA"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/{$index}/_doc?pretty"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+	"name": "{$name}",
+    "date": "{$date}",
+    "text": "{$text}",
+	"hashtag": "{$hashTag}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="document"
+                       failOnError="true"
+                       forSearch="false"
+                       label="deleteDoc"
+                       maxRedirects="100"
+                       name="deleteDoc"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="id"
+                                nogen="true"
+                                required="false"
+                                testWith="ZLovFYIB5jT4SudLOFRv"
+                                type="string"/>
+                     <parameter name="index"
+                                nogen="true"
+                                required="true"
+                                testWith="twitter"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/{$index}/_doc/{$id}"
+                                        verb="DELETE">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>4hARo85UKFtlicnVlWvjSQ</types1:GUID>
+      <types1:DisplayName>cnx-svc-CBA-Elasticsearch</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-10-05T06:46:50.322Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

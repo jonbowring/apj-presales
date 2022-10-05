@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "5TJNDqaTfPscEPEM28eiIc",
+    "name" : "jbowring",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Jon Bowring's personal folder.",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

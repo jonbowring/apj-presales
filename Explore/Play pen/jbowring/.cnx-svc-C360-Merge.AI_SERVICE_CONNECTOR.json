@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9gDGfNS8EDSkY5keNJxmOE",
+    "name" : "cnx-svc-C360-Merge",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "XqfOZ3NjDg8SOlA-gt-460527-2022-10-05T06:44:35.795Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

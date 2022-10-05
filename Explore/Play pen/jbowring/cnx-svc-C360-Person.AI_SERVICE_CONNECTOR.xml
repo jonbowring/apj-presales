@@ -1,0 +1,2454 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kRxvOdsreK8ZAZf-gt-460551-2022-10-05T06:44:36.164Z::svc.xml</types1:EntryId>
+      <types1:Name>cnx-svc-C360-Person</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jon.snow.09.2022@sharklasers.com</types1:CreatedBy>
+      <types1:CreationDate>2022-10-05T06:44:36Z</types1:CreationDate>
+      <types1:ModifiedBy>jon.snow.09.2022@sharklasers.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-10-05T06:46:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="cnx-svc-C360-Person"
+                            label=""
+                            name="cnx-svc-C360-Person"
+                            uuid="78072ef8-60a0-49e8-a711-9c785bfb2761">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="localhost:80"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="updatePerson"
+                       maxRedirects="100"
+                       name="updatePerson"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="systemName"
+                                name="systemName"
+                                nogen="true"
+                                required="false"
+                                testWith="BW"
+                                type="string"/>
+                     <parameter label="body"
+                                name="body"
+                                nogen="true"
+                                required="false"
+                                testWith="{ &#34;frstNm&#34;: &#34;Julie&#34;, &#34;lstNm&#34;: &#34;Brown&#34;, &#34;brthDt&#34;: &#34;1985-02-10&#34;, &#34;key&#34;: { &#34;sourceKey&#34;: &#34;Persn|Julie|Smith|1985-02-10&#34; }, &#34;$original&#34;: { &#34;frstNm&#34;: &#34;0&#34;, &#34;lstNm&#34;: &#34;0&#34;, &#34;brthDt&#34;: &#34;9999-12-31&#34; }, &#34;CustomerPersonPostalAddr&#34;: { &#34;item&#34;: [ { &#34;key&#34;: { &#34;sourceKey&#34;: &#34;Person|Julie|Smith|1985-02-10|Address|1 Street|Sydney|AU|3000&#34;, &#34;systemName&#34;: &#34;CBA&#34; }, &#34;PostalAddress&#34;: { &#34;key&#34;: { &#34;sourceKey&#34;: &#34;Address|1 Street|Sydney|AU|3000&#34;, &#34;systemName&#34;: &#34;CBA&#34; }, &#34;addrLn1&#34;: &#34;8 Street&#34;, &#34;$original&#34;: { &#34;addrLn1&#34;: &#34;0&#34; } } } ] }, &#34;CustomerPersonElectronicAddress&#34;: { &#34;item&#34;: [ { &#34;key&#34;: { &#34;sourceKey&#34;: &#34;Person|Julie|Smith|1985-02-10|js@gmail.com&#34;, &#34;systemName&#34;: &#34;CBA&#34; }, &#34;etrncAddr&#34;: &#34;jb@gmail.com&#34;, &#34;$original&#34;: { &#34;etrncAddr&#34;: &#34;0&#34; } } ] } }"
+                                type="string"/>
+                     <parameter label="idPathParam"
+                                name="idPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith="1200010"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson/{$idPathParam}.json?systemName={$systemName}"
+                                        verb="POST">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{$body}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="successful operation"
+                            entireResponse="true"
+                            name="updatePerson"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">$any</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="createPerson"
+                       maxRedirects="100"
+                       name="createPerson"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="systemName"
+                                name="systemName"
+                                nogen="true"
+                                required="false"
+                                testWith="CBA"
+                                type="string"/>
+                     <parameter label="body"
+                                name="body"
+                                required="false"
+                                testWith="{&#xA;  &#34;frstNm&#34;: &#34;Julie&#34;,&#xA;  &#34;lstNm&#34;: &#34;Brown&#34;,&#xA;  &#34;brthDt&#34;: &#34;1985-06-05&#34;,&#xA;  &#34;gndrCd&#34;: {&#xA;    &#34;gndrCd&#34;: &#34;F&#34;&#xA;  },&#xA;  &#34;key&#34;: {&#xA;    &#34;sourceKey&#34;: &#34;Person|Julie|Brown|1985-06-05&#34;&#xA;  },&#xA;  &#34;CustomerPersonPostalAddr&#34;: {&#xA;    &#34;item&#34;: [&#xA;      {&#xA;        &#34;key&#34;: {&#xA;          &#34;sourceKey&#34;: &#34;Person|Julie|Brown|1985-06-05|Address|1 Street|Sydney|AU|3000&#34;&#xA;        },&#xA;        &#34;PostalAddress&#34;: {&#xA;          &#34;key&#34;: {&#xA;            &#34;sourceKey&#34;: &#34;Address|1 Street|Sydney|AU|3000&#34;&#xA;          },&#xA;          &#34;addrLn1&#34;: &#34;1 Street&#34;,&#xA;          &#34;city&#34;: &#34;Sydney&#34;,&#xA;          &#34;pstlCd&#34;: &#34;3000&#34;,&#xA;          &#34;cntryCd&#34;: {&#xA;            &#34;cntryCd&#34;: &#34;AU&#34;&#xA;          }&#xA;        }&#xA;      }&#xA;    ]&#xA;  },&#xA;  &#34;CustomerPersonElectronicAddress&#34;: {&#xA;    &#34;item&#34;: [&#xA;      {&#xA;        &#34;key&#34;: {&#xA;          &#34;sourceKey&#34;: &#34;Person|Julie|Brown|1985-06-05|js@gmail.com&#34;&#xA;        },&#xA;        &#34;etrncAddr&#34;: &#34;js@gmail.com&#34;&#xA;      }&#xA;    ]&#xA;  },&#xA;  &#34;CustomerPersonPhone&#34;: {&#xA;    &#34;item&#34;: [&#xA;      {&#xA;        &#34;key&#34;: {&#xA;          &#34;sourceKey&#34;: &#34;Person|Julie|Brown|1985-06-05|04|12345678&#34;&#xA;        },&#xA;        &#34;phnNum&#34;: &#34;12345678&#34;,&#xA;        &#34;prfxNum&#34;: &#34;04&#34;&#xA;      }&#xA;    ]&#xA;  }&#xA;}"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson.json?systemName={$systemName}"
+                                        verb="POST">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="successful operation"
+                            entireResponse="true"
+                            name="createPerson"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="searchMatch"
+                       maxRedirects="100"
+                       name="searchMatch"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="filter"
+                                name="filter"
+                                required="false"
+                                testWith="brthDt='2022-07-18' AND CustomerPersonPostalAddr.PostalAddress.city='Sydney' AND CustomerPersonPostalAddr.PostalAddress.cntryCd='AU' AND CustomerPersonElectronicAddress.etrncAddr='marge@springfield.com' AND CustomerPersonPhone.phnNum='99999999'"
+                                type="string"/>
+                     <parameter label="suppressLinks"
+                                name="suppressLinks"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                     <parameter label="depth"
+                                name="depth"
+                                required="false"
+                                testWith="3"
+                                type="string"/>
+                     <parameter label="CustomerPersonPostalAddr.PostalAddress.addrLn1"
+                                name="CustomerPersonPostalAddr.PostalAddress.addrLn1"
+                                required="false"
+                                testWith="742 Evergreen Tce"
+                                type="string"/>
+                     <parameter label="returnTotal"
+                                name="returnTotal"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                     <parameter label="action"
+                                name="action"
+                                required="false"
+                                testWith="match"
+                                type="string"/>
+                     <parameter label="fuzzyFilter"
+                                name="fuzzyFilter"
+                                required="false"
+                                testWith="fullNm=Marge Simpson"
+                                type="string"/>
+                     <parameter label="readSystemFields"
+                                name="readSystemFields"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson.json"
+                                        verb="GET">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="successful operation"
+                            entireResponse="true"
+                            name="searchMatch"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="simpleSearch"
+                       maxRedirects="100"
+                       name="simpleSearch"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="action" required="false" testWith="match" type="string"/>
+                     <parameter name="fuzzyFilter"
+                                required="false"
+                                testWith="fullNm=wednesday addams"
+                                type="string"/>
+                     <parameter name="suppressLinks"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                     <parameter name="matchRuleSet"
+                                required="false"
+                                testWith="demo"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson.json"
+                                        verb="GET">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="SimpleSearchResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                     <field description="" name="Matches" type="objectlist">
+                        <options>
+                           <option name="referenceTo">CustomerPerson</option>
+                        </options>
+                        <xquery>{$SimpleSearchResponse//CustomerPerson}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="getPerson"
+                       maxRedirects="100"
+                       name="getPerson"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="depth" required="false" testWith="3" type="string"/>
+                     <parameter name="suppressLinks"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                     <parameter name="id" required="false" testWith="1280002" type="string"/>
+                     <parameter name="contentMetadata"
+                                required="false"
+                                testWith="XREF"
+                                type="string"/>
+                     <parameter name="readSystemFields"
+                                required="false"
+                                testWith="true"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson/{$id}.json"
+                                        verb="GET">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="GetPersonResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                     <field description="" name="Person" type="reference">
+                        <options>
+                           <option name="referenceTo">GetPerson_CustomerPerson</option>
+                        </options>
+                        <xquery>{$GetPersonResponse}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="extendPerson"
+                       maxRedirects="100"
+                       name="extendPerson"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="id" required="false" testWith="" type="string"/>
+                     <parameter name="system" required="false" testWith="" type="string"/>
+                     <parameter name="body" required="false" testWith="" type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson/{$id}.json?systemName={$system}"
+                                        verb="POST">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <body>{$body}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Extend_Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="person"
+                       failOnError="true"
+                       forSearch="false"
+                       label="createRelationship"
+                       maxRedirects="100"
+                       name="createRelationship"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="type"
+                                nogen="true"
+                                required="false"
+                                testWith="PersonSpousePerson"
+                                type="string"/>
+                     <parameter name="system"
+                                nogen="true"
+                                required="false"
+                                testWith="CBA"
+                                type="string"/>
+                     <parameter name="from"
+                                nogen="true"
+                                required="false"
+                                testWith="1340001"
+                                type="string"/>
+                     <parameter name="to"
+                                nogen="true"
+                                required="false"
+                                testWith="152"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/{$type}.json?systemName={$system}"
+                                        verb="POST">
+                        <authentication>
+                           <username>admin</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+	"from": {{
+		"rowidObject": "{$from}"
+	}},
+	"to": {{
+		"rowidObject": "{$to}"
+	}}
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Relationship_Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonElectronicAddress_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="PostalAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPhone">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPhone_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPhone_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_status">
+                  <description/>
+                  <detail>
+                     <field name="prtyRleStsValDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="prtyRleStsVal"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="addrTyp"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rsdntlAddrInd"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="dfltInd" nullable="true" required="false" type="string"/>
+                     <field name="PostalAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rgstrdAddrInd"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonElectronicAddress_item_original">
+                  <description/>
+                  <detail>
+                     <field name="etrncAddr" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request">
+                  <description/>
+                  <detail>
+                     <field name="body" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_gndrCd">
+                  <description/>
+                  <detail>
+                     <field name="gndrCd" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request">
+                  <description/>
+                  <detail>
+                     <field name="body" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="PostalAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="addrTyp"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="SC__original"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_original</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity">
+                  <description/>
+                  <detail>
+                     <field name="matchScore"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="matchRule" nullable="true" required="false" type="string"/>
+                     <field name="businessEntity"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="PostalAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_original">
+                  <description/>
+                  <detail>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPhone_item">
+                  <description/>
+                  <detail>
+                     <field name="prfxNum" nullable="true" required="false" type="string"/>
+                     <field name="phnNum" nullable="true" required="false" type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPhone_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch">
+                  <description/>
+                  <detail>
+                     <field name="matchedEntity"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="recordCount"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="double"/>
+                     <field name="firstRecord"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="facet" nullable="true" required="false" type="string"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_original">
+                  <description/>
+                  <detail>
+                     <field name="addrLn1" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="SC__original"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonElectronicAddress_item_original</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="etrncAddr" nullable="true" required="false" type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonElectronicAddress_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="recordCount"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="double"/>
+                     <field name="firstRecord"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="systemName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonElectronicAddress_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPhone"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="link" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_link</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="draftInd" nullable="true" required="false" type="string"/>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="isCustomer"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="gndrCd" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_gndrCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="prtyTyp" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="fullNm" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_status</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="PostalAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonElectronicAddress_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonElectronicAddress_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone_item">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="prfxNum" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="dncInd" nullable="true" required="false" type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="dfltInd" nullable="true" required="false" type="string"/>
+                     <field name="vldt" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="ndcInd" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="phnNum" nullable="true" required="false" type="string"/>
+                     <field name="phnTyp" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone_item_phnTyp</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPhone">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPhone_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone_item_phnTyp">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="phnTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="phnTyp" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="gndrCd" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_gndrCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="CustomerPersonPhone"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPhone</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="dfltInd" nullable="true" required="false" type="string"/>
+                     <field name="vldt" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="etrncAddrTyp"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress_item_etrncAddrTyp</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="etrncAddr" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_gndrCd">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="gndrDesc" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="gndrCd" nullable="true" required="false" type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_link">
+                  <description/>
+                  <detail>
+                     <field name="rel" nullable="true" required="false" type="string"/>
+                     <field name="href" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_gndrCd_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="addrTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="addrTyp" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress">
+                  <description/>
+                  <detail>
+                     <field name="SC__original"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_original</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="addrLn1" nullable="true" required="false" type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonElectronicAddress_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_cntryCd">
+                  <description/>
+                  <detail>
+                     <field name="cntryCd" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPhone_item">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPhone_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress">
+                  <description/>
+                  <detail>
+                     <field name="cntryCd"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPhone_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="etrncAddr" nullable="true" required="false" type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonElectronicAddress_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="recordCount"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="double"/>
+                     <field name="firstRecord"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_CustomerPersonPostalAddr_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonPostalAddr_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="systemName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_CustomerPerson_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonElectronicAddress_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="systemName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="city" nullable="true" required="false" type="string"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="cntryCd"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="addrLn1" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="vldt" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="pstlCd" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="gndrCd" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_gndrCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="CustomerPersonPhone"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPhone</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonElectronicAddress_item_etrncAddrTyp">
+                  <description/>
+                  <detail>
+                     <field name="consolidationInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="creator" nullable="true" required="false" type="string"/>
+                     <field name="addrTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="hubStateInd"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="lastUpdateDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastRowidSystem"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="addrTyp" nullable="true" required="false" type="string"/>
+                     <field name="createDate"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPostalAddr_item_PostalAddress_cntryCd">
+                  <description/>
+                  <detail>
+                     <field name="cntryCd" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_gndrCd">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_gndrCd_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">searchMatch_matchedEntity_businessEntity_CustomerPerson_CustomerPersonPhone_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="recordCount"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="double"/>
+                     <field name="firstRecord"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr_item_key">
+                  <description/>
+                  <detail>
+                     <field name="sourceKey" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress">
+                  <description/>
+                  <detail>
+                     <field name="city" nullable="true" required="false" type="string"/>
+                     <field name="pstlCd" nullable="true" required="false" type="string"/>
+                     <field name="cntryCd"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_cntryCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="addrLn1" nullable="true" required="false" type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_Request_body_CustomerPersonPostalAddr_item_PostalAddress_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">updatePerson_CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createPerson_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp">
+                  <description/>
+                  <detail>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">createPerson_CustomerPerson_CustomerPersonPostalAddr_item_addrTyp_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="updatePerson_Request_body_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">updatePerson_Request_body_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" nullable="true" required="false" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" nullable="true" required="false" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="SimpleSearch_root">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="matchedEntity"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">matchedEntity</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="int"/>
+                     <field name="firstRecord" nullable="true" required="false" type="int"/>
+                     <field name="facet" nullable="true" required="false" type="string"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="matchedEntity">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="matchScore" nullable="true" required="false" type="int"/>
+                     <field name="matchRule" nullable="true" required="false" type="string"/>
+                     <field name="businessEntity"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">businessEntity</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="businessEntity">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CustomerPerson">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="isCustomer"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="gndrCd" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">gndrCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">link</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="prtyTyp" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="draftInd" nullable="true" required="false" type="string"/>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                     <field name="fullNm" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">status</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="GetPerson_CustomerPerson">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="brthDt" nullable="true" required="false" type="string"/>
+                     <field name="frstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPhone"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">CustomerPersonPhone</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">link</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="draftInd" nullable="true" required="false" type="string"/>
+                     <field name="lstNm" nullable="true" required="false" type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="isCustomer"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="gndrCd" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">gndrCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="prtyTyp" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="fullNm" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">status</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CustomerPersonPhone">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="int"/>
+                     <field name="firstRecord" nullable="true" required="false" type="int"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="item">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="dfltInd" nullable="true" required="false" type="string"/>
+                     <field name="vldt" nullable="true" required="false" type="string"/>
+                     <field name="prfxNum" nullable="true" required="false" type="int"/>
+                     <field name="dncInd" nullable="true" required="false" type="string"/>
+                     <field name="ndcInd" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="int"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                     <field name="phnNum" nullable="true" required="false" type="int"/>
+                     <field name="phnTyp" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">phnTyp</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="phnTyp">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="phnTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                     <field name="phnTyp" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="link">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="rel" nullable="true" required="false" type="string"/>
+                     <field name="href" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CustomerPersonPostalAddr">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="int"/>
+                     <field name="firstRecord" nullable="true" required="false" type="int"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="PostalAddress">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="vldt" nullable="true" required="false" type="string"/>
+                     <field name="city" nullable="true" required="false" type="string"/>
+                     <field name="pstlCd" nullable="true" required="false" type="int"/>
+                     <field name="cntryCd"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">cntryCd</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="addrLn1" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="cntryCd">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="cntryCd" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="addrTyp">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="addrTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                     <field name="addrTyp" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="CustomerPersonElectronicAddress">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="link" nullable="true" required="false" type="string"/>
+                     <field name="pageSize" nullable="true" required="false" type="int"/>
+                     <field name="firstRecord" nullable="true" required="false" type="int"/>
+                     <field name="searchToken"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="etrncAddrTyp">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="addrTypDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                     <field name="addrTyp" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="gndrCd">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="gndrDesc" nullable="true" required="false" type="string"/>
+                     <field name="gndrCd" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="status">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="prtyRleStsValDesc"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="prtyRleStsVal"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="rowidObject" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>km0zYCsLJMwk1vCiWU2Zi0</types1:GUID>
+      <types1:DisplayName>cnx-svc-C360-Person</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-10-05T06:46:50.286Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

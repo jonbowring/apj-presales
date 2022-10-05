@@ -1,0 +1,165 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>24FsWTzIf6riX2F-gt-460535-2022-10-05T06:44:35.865Z::svc.xml</types1:EntryId>
+      <types1:Name>cnx-svc-NAB-Axon</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jon.snow.09.2022@sharklasers.com</types1:CreatedBy>
+      <types1:CreationDate>2022-10-05T06:44:36Z</types1:CreationDate>
+      <types1:ModifiedBy>jon.snow.09.2022@sharklasers.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-10-05T06:46:42Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="cnx-svc-NAB-Axon"
+                            label=""
+                            name="cnx-svc-NAB-Axon"
+                            uuid="bfbbc2ed-d051-4965-93a7-9fdc9580f979">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="host"
+                                    required="true"
+                                    testWith="infa105201-axon723-dgdemo-partners.infacloud.eu:9999"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="authentication"
+                       failOnError="true"
+                       forSearch="false"
+                       label="login"
+                       maxRedirects="100"
+                       name="login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="username"
+                                required="false"
+                                testWith="admin@informatica.com"
+                                type="string"/>
+                     <parameter name="password"
+                                required="false"
+                                testWith="Changeme@123"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$host}/api/login_check"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <body generateUsing="JSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="DQ"
+                       failOnError="true"
+                       forSearch="false"
+                       label="publishDqResult"
+                       maxRedirects="100"
+                       name="publishDqResult"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="executionTime"
+                                nogen="true"
+                                required="false"
+                                testWith="2020-01-14"
+                                type="date"/>
+                     <parameter name="score"
+                                nogen="true"
+                                required="false"
+                                testWith="73"
+                                type="int"/>
+                     <parameter name="exceptionCount"
+                                nogen="true"
+                                required="false"
+                                testWith="4675"
+                                type="int"/>
+                     <parameter name="identity"
+                                nogen="true"
+                                required="false"
+                                testWith="PT-DQ78"
+                                type="string"/>
+                     <parameter name="rowCount"
+                                nogen="true"
+                                required="false"
+                                testWith="14078"
+                                type="int"/>
+                     <parameter name="token"
+                                nogen="true"
+                                required="true"
+                                testWith="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTg3MTExOTYsImV4cCI6MTY1ODc5NzU5Niwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BUEkiXSwidXNlcm5hbWUiOiJhZG1pbkBpbmZvcm1hdGljYS5jb20iLCJyZWYiOiIxIiwibmFtZSI6IkpvaG4gQWRtaW4iLCJheG9uX3JvbGUiOiJTdXBlckFkbWluIn0.d4-Sm-yG_ekR7Pv_NF4V90ggst2ire08G8Eh9RgGEaRvFm7DAfMYQkpQWUIJQ2q7Wqc1ul-PB6JVKUdn53-G04KAGFdsz8A0btQKxarQNjZmm1o_FxH3BsWjW2cLlF7kByqrCLVr5-TcC_sKdhzvN-YX9h7V9bd5nO0-UlXKLYF72IT9SJy36Ib-vTavGbmRrWNI6yn_nLJcmMb0rzcrLVQ6ocEkYP4WQ3NQn2QOvo2PPU65LvDGEheuvTNA_0RfRDJHiSdrBY0Qy8nxSyjaFoOUVd3XL05YZI41V796tnj3Ojoca2ikACi-K1LnvQLWza8T_wSTYSIQeJ0NMhvEn5ewqiV3cnySnrGCCWTInftUIAXKsLrmff_he_c4DsX0-MQ7xX51IEbyvBUS9KE0068-O8g-X6rB8hyjtWXItsf2ysR8QG-Uoc5pW3jf0NSuaufA8q1gQpsyScNSYI0Vg9WqSTj86E7TY96I1kLA59jEOWb221cVzaANyUCURZHMek4QDrZLrCbk39xf89lCLfcQpzSsaQIAwMNasfoQPmzw4rCiza_2isWLaLv2ablec1PR3w_kheFyPdeMIEINWr41msHzssDkY8z4VmXIg7ZoMd1GTgsjohe3Kmy1VVxZlDtgIYTwduAwAjXPnAdCpj8eTLCxl4xCSWdEuq8jbSc"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$host}/api/v1/dqscorereport"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">Bearer {$token}</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+	"data": [
+		{{
+			"executionTime": "{$executionTime}",
+			"score": "{$score}",
+			"exceptionCount": "{$exceptionCount}",
+			"identity": "{$identity}",
+			"dqReportProvider": "IDQ",
+			"rowCount": "{$rowCount}"
+		}}
+	]
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="DQ_Response"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>76xARPeawy2bTA8bs1VqEf</types1:GUID>
+      <types1:DisplayName>cnx-svc-NAB-Axon</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-10-05T06:46:50.359Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

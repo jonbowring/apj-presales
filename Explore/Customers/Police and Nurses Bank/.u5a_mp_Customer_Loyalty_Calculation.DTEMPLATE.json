@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "9CZybexUKERjc288Pw3ZQP",
+    "id" : "9HymH88cRkFjHdGAS2D4KD",
     "name" : "u5a_mp_Customer_Loyalty_Calculation",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C17000000000018"
+        "repoHandle" : "011Q6C1700000000001A"
       },
       "contextAttributes" : [ {
         "name" : "id",

@@ -1,0 +1,365 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>u7O2htghGZ5i4rs-gt-3395500-2022-09-30T06:08:23.307Z::tf.xml</types1:EntryId>
+      <types1:Name>u5c_tf_Customer_Loyalty</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbowring_APJCDP@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2022-09-30T06:08:23Z</types1:CreationDate>
+      <types1:ModifiedBy>jbowring_APJCDP@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2022-10-05T00:49:09Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbowring_APJCDP@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-10-05T00:49:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.u5c_tf_Customer_Loyalty/u5c_tf_Customer_Loyalty.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="u5c_tf_Customer_Loyalty"
+                   name="u5c_tf_Customer_Loyalty"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Run Loyalty Calculation" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:u5a-mt-Customer-Loyalty-Calculation</option>
+                  </options>
+               </field>
+               <field description="" name="Error Flag" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Stage the Loyalty File" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:u5b-mt-Customer-Loyalty-File</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Encrypt and FTP File" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedGroups>
+                     <group>Pre_Sales</group>
+                  </allowedGroups>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="l8o30d11" targetId="l8o30d1n"/>
+               </start>
+               <eventContainer id="l8o30d1n">
+                  <service id="l8o30d10">
+                     <title>Run Loyalty Calculation</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">u5a_mt_Customer_Loyalty_Calculation</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">0NANGJ3DQ1kjfN6ElqeZeG</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="u5a-mt-Customer-Loyalty-Calculation">temp.Run Loyalty Calculation</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.Run Loyalty Calculation/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.Run Loyalty Calculation/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.Run Loyalty Calculation/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.Run Loyalty Calculation/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.Run Loyalty Calculation/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Run Loyalty Calculation/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="l8uuq1u4">
+                     <eventContainer id="l8uuq1v0">
+                        <service id="l8uuq1ue">
+                           <title>Stage the Loyalty File</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">u5b_mt_Customer_Loyalty_File</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9ErHuQBH7pZgLockXUfZGB</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="u5b-mt-Customer-Loyalty-File">temp.Stage the Loyalty File</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Stage the Loyalty File/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Stage the Loyalty File/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Stage the Loyalty File/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Stage the Loyalty File/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.Stage the Loyalty File/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="l8uuq1v8" targetId="l8uuq1w8"/>
+                        <events>
+                           <catch faultField="temp.Stage the Loyalty File/fault"
+                                  id="l8o30d2s"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.Stage the Loyalty File/fault"
+                                  id="l8o30d2t"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="l8uuq1w8">
+                        <service id="l8uuq1v7">
+                           <title>Encrypt and FTP File</title>
+                           <serviceName>DIExecuteServiceTaskIngestionTaskImpl</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">u5c_mi_Customer_Loyalty_FTP</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">brYuVSiQCw6iGEv5h7dzwE</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MI_TASK</parameter>
+                              <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
+                              <parameter name="serviceProviderContextPath"
+                                         source="constant"
+                                         updatable="true">mitask/</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE">temp.Encrypt and FTP File</operation>
+                                 <operation source="constant"
+                                            to="u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
+                                 <operation source="constant"
+                                            to="u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE/input[1]/CATEGORYGeneral[1]/targetConnectionType">AdvancedFTPV2</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Encrypt and FTP File/output/successFiles">successFiles</operation>
+                              <operation source="field" to="temp.Encrypt and FTP File/output/failedFiles">failedFiles</operation>
+                              <operation source="field" to="temp.Encrypt and FTP File/output/fileDetails">fileDetails</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="l8uuq1wa">
+                           <link id="l8uuq1wb" targetId="l8uuq1w8" type="containerLink"/>
+                        </flow>
+                        <flow id="l8uuq1wd">
+                           <service id="l8uuq1xk">
+                              <title>Send FTP failure email</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">jbowring@informatica.com</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">Customer Loyalty Calculation Failure</parameter>
+                                 <parameter name="Email Content Type" source="constant">html</parameter>
+                                 <parameter name="Email Body" source="constant">&lt;p&gt;Hi there,&lt;/p&gt;
+&lt;p&gt;Something went wrong while calculating the customer loyalty data. Please see the below report for more details:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Encrypt and FTP File:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Status: {$temp.EncryptandFTPFile[1]/fault[1]/code}&lt;/p&gt;
+&lt;p&gt;Error Message: {$temp.EncryptandFTPFile[1]/fault[1]/reason}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Kind regards&lt;/p&gt;
+&lt;p&gt;Informatica Cloud&lt;/p&gt;</parameter>
+                              </serviceInput>
+                              <serviceOutput/>
+                              <link id="l8uuq20l" targetId="l8uuq20k"/>
+                           </service>
+                           <throw id="l8uuq20k">
+                              <title>Throw 1</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.Encrypt and FTP File[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.Encrypt and FTP File[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.Encrypt and FTP File[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="l8uuq1w9" targetId="l8uuq1wa" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.Encrypt and FTP File/fault"
+                                  id="l8uuq1fd"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="l8uuq1wc" targetId="l8uuq1wd" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="l8uuq1u5" targetId="l8o30d1n" type="containerLink"/>
+                  </flow>
+                  <flow id="l8uuq1u7">
+                     <service id="l8uuq1vo">
+                        <title>Send calculation failure email</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">jbowring@informatica.com</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">Customer Loyalty Calculation Failure</parameter>
+                           <parameter name="Email Content Type" source="constant">html</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;Hi there,&lt;/p&gt;
+&lt;p&gt;Something went wrong while calculating the customer loyalty data. Please see the below report for more details:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Run Loyalty Calculation:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Status: {$temp.RunLoyaltyCalculation[1]/output[1]/Task_Status}&lt;/p&gt;
+&lt;p&gt;Error Message: {$temp.RunLoyaltyCalculation[1]/output[1]/Error_Message}&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Kind regards&lt;/p&gt;
+&lt;p&gt;Informatica Cloud&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                        <link id="l8uuq21a" targetId="l8uuq219"/>
+                     </service>
+                     <throw id="l8uuq219">
+                        <title>Throw 2</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">temp.Run Loyalty Calculation[1]/fault[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">temp.Run Loyalty Calculation[1]/fault[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">temp.Run Loyalty Calculation[1]/fault[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="l8uuq1u3" targetId="l8uuq1u4" type="containerLink"/>
+                  <link id="l8uuq1x0" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Run Loyalty Calculation/fault"
+                            id="l8o30d1l"
+                            interrupting="true"
+                            name="error">
+                        <link id="l8uuq1u6" targetId="l8uuq1u7" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.Run Loyalty Calculation/fault"
+                            id="l8o30d1m"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="u5a-mt-Customer-Loyalty-Calculation"
+                              isByCopy="true"
+                              name="u5a-mt-Customer-Loyalty-Calculation">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="u5b-mt-Customer-Loyalty-File"
+                              isByCopy="true"
+                              name="u5b-mt-Customer-Loyalty-File">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE"
+                              isByCopy="true"
+                              name="u5c-mi-Customer-Loyalty-FTP-brYuVSiQCw6iGEv5h7dzwE">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>aDBHDngfCdGiguKSPXks4H</types1:GUID>
+      <types1:DisplayName>u5c_tf_Customer_Loyalty</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-10-05T01:26:14.178Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

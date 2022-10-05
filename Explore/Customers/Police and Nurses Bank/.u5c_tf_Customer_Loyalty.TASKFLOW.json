@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "3Oi9VmB9SiZexjLipKz6m8",
+    "id" : "2PMyAA22ZCvfo2AHfq0iGG",
     "name" : "u5c_tf_Customer_Loyalty",
     "type" : "TASKFLOW",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "hxWPQE8jIw8jIw8-gt-8974107-2022-10-05T03:12:41.117Z::tf.xml"
+        "repoHandle" : "7Y3AxtPk7HNCnch-gt-4962647-2022-10-05T03:42:29.942Z::tf.xml"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
@@ -21,50 +21,7 @@
   },
   "dataFileExtension" : "xml",
   "objectRefs" : [ {
-    "id" : "4Yh9NtHjDBWcoM31VDEHod",
-    "name" : "u5b_mt_Customer_Loyalty_File",
-    "type" : "MTT",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000F"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Customers/Police and Nurses Bank"
-  }, {
-    "id" : "9DRi4aeuz2UladNx7pHSSZ",
-    "name" : "u5c_mi_Customer_Loyalty_FTP",
-    "type" : "MI_TASK",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 1,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "19046"
-      },
-      "contextAttributes" : [ ],
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "Binary",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Customers/Police and Nurses Bank"
-  }, {
-    "id" : "94PUsHDfLMZfG1S8sdk4gE",
+    "id" : "16osFkZ6Bc3gELcruNIYei",
     "name" : "u5a_mt_Customer_Loyalty_Calculation",
     "type" : "MTT",
     "metadata" : {
@@ -73,7 +30,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000G"
+        "repoHandle" : "011Q6C0Z00000000000I"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -82,6 +39,49 @@
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customers/Police and Nurses Bank"
+  }, {
+    "id" : "5dzoi9nDGU6gfraLyyZ1MZ",
+    "name" : "u5b_mt_Customer_Loyalty_File",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C0Z00000000000H"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customers/Police and Nurses Bank"
+  }, {
+    "id" : "aM8DXQAPilXh2vTCbf4Amr",
+    "name" : "u5c_mi_Customer_Loyalty_FTP",
+    "type" : "MI_TASK",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "19047"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
         "documentState" : "VALID"
       }
     },

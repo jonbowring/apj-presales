@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "89UgbnZSzz1lGdOmOXhDg1",
+    "id" : "4szQsJR8oHZgiwAzLykOOq",
     "name" : "u5b_mt_Customer_Loyalty_File",
     "type" : "MTT",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000L"
+        "repoHandle" : "011Q6C0Z00000000000N"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -24,29 +24,6 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "aj0e1O7MhSIlyXEsBGHqUx",
-    "name" : "u5b_mp_Customer_Loyalty_File",
-    "type" : "DTEMPLATE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "011Q6C17000000000015"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Customers/Police and Nurses Bank"
-  }, {
     "id" : "96jKUNzCa6ifyFNGedHCCW",
     "name" : "ANZ-Presales-Demo",
     "type" : "AgentGroup",
@@ -106,5 +83,28 @@
       }
     },
     "path" : "/SYS"
+  }, {
+    "id" : "3ZZmYIzyYGKdvmErSbjesH",
+    "name" : "u5b_mp_Customer_Loyalty_File",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C17000000000017"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customers/Police and Nurses Bank"
   } ]
 }

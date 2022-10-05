@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "gj5OaPkqdIihUL3a5oddwe",
+    "id" : "0ug4BK40sU0iAH6mV21WIT",
     "name" : "u5a_mt_Customer_Loyalty_Calculation",
     "type" : "MTT",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000M"
+        "repoHandle" : "011Q6C0Z00000000000O"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -44,6 +44,29 @@
     },
     "path" : "/SYS"
   }, {
+    "id" : "9CZybexUKERjc288Pw3ZQP",
+    "name" : "u5a_mp_Customer_Loyalty_Calculation",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C17000000000018"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This is a DevOps example",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customers/Police and Nurses Bank"
+  }, {
     "id" : "9FEUsImL496gjLX618My63",
     "name" : "Snowflake_PNL_Bank",
     "type" : "Connection",
@@ -63,28 +86,5 @@
       }
     },
     "path" : "/SYS"
-  }, {
-    "id" : "3km2w1qnpKrhlaLrysZugP",
-    "name" : "u5a_mp_Customer_Loyalty_Calculation",
-    "type" : "DTEMPLATE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "011Q6C17000000000016"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
-      "additionalInfo" : {
-        "description" : "This is a DevOps example",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Customers/Police and Nurses Bank"
   } ]
 }

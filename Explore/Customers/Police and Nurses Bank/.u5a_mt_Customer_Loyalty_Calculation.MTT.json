@@ -60,7 +60,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "This is a loyalty calculation",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }

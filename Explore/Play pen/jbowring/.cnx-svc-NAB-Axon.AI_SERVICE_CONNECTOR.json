@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "0eW0Me66Ng5g3rabKfpLEt",
+    "name" : "cnx-svc-NAB-Axon",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "G8H36I1dq2ME9pa-gt-7203045-2022-07-25T01:04:45.192Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

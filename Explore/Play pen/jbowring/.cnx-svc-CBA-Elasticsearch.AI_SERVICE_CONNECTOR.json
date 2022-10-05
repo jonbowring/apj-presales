@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "bp7kCzg3XmNkqVmXnMcY4R",
+    "name" : "cnx-svc-CBA-Elasticsearch",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0RKWa-gt-4272271-2022-07-19T05:58:26.993Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

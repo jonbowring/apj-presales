@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6b58Hp3K9KmdG9Ef06QSmb",
+    "name" : "cnx-svc-C360-Person",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "1UEWglH8n55ErhN-gt-55996-2022-07-11T18:12:15.841Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

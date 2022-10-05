@@ -1,0 +1,484 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>47M1reAFLK2D86C-gt-203442-2022-07-12T10:15:35.894Z::svc.xml</types1:EntryId>
+      <types1:Name>cnx-svc-C360-Merge</types1:Name>
+      <types1:ParentFlowIds>7aa-gt-776949-2022-07-12T10:17:51.938Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbowring_APJCDP@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2022-07-12T10:15:36Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbowring_APJCDP@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2022-07-12T10:15:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/cnx_svc_C360_Merge/cnx_svc_C360_Merge_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="cnx-svc-C360-Merge"
+                            label=""
+                            name="cnx-svc-C360-Merge"
+                            uuid="40e68042-9cfa-4a99-9ba6-1e138965a391">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="65.1.149.206:80"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="merge"
+                       failOnError="true"
+                       forSearch="false"
+                       label="merge"
+                       maxRedirects="100"
+                       name="merge"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="action"
+                                name="action"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter label="body"
+                                name="body"
+                                required="false"
+                                testWith=""
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body</option>
+                        </options>
+                     </parameter>
+                     <parameter label="idPathParam"
+                                name="idPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://{$hostName}/cmx/cs/orcl-TCR_HUB_NEW/CustomerPerson/{$idPathParam}.json"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="successful operation"
+                            entireResponse="true"
+                            name="merge"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item">
+                  <description/>
+                  <detail>
+                     <field name="MERGE" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE_item">
+                  <description/>
+                  <detail>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE_item_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_CustomerPerson_link">
+                  <description/>
+                  <detail>
+                     <field name="rel" nullable="true" required="false" type="string"/>
+                     <field name="href" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body">
+                  <description/>
+                  <detail>
+                     <field name="keys" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_keys</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="overrides"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item">
+                  <description/>
+                  <detail>
+                     <field name="MERGE" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE_item_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress_item_MERGE_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item">
+                  <description/>
+                  <detail>
+                     <field name="MERGE" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE_item_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE_item">
+                  <description/>
+                  <detail>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item_MERGE_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE_item">
+                  <description/>
+                  <detail>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE_item_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPersonElectronicAddress"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonElectronicAddress</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="CustomerPersonPhone"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="CustomerPersonPostalAddr"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPostalAddr</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request">
+                  <description/>
+                  <detail>
+                     <field name="body" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_Request_body</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_keys">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_CustomerPerson">
+                  <description/>
+                  <detail>
+                     <field name="link" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_CustomerPerson_link</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="rowidObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="key" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">merge_CustomerPerson_key</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge">
+                  <description/>
+                  <detail>
+                     <field name="CustomerPerson"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">merge_CustomerPerson</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_CustomerPerson_key">
+                  <description/>
+                  <detail>
+                     <field name="rowid" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE">
+                  <description/>
+                  <detail>
+                     <field name="item" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">merge_Request_body_overrides_CustomerPerson_CustomerPersonPhone_item_MERGE_item</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" nullable="true" required="false" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" nullable="true" required="false" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>1XvhNw6v9sDgfzQG37aPOH</types1:GUID>
+      <types1:DisplayName>cnx-svc-C360-Merge</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-10-05T06:39:31.084Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

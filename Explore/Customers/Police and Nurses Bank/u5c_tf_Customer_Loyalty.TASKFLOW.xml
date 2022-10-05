@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>I96xZ6or3rp3yD7-gt-8967136-2022-10-05T02:55:09.556Z::tf.xml</types1:EntryId>
+      <types1:EntryId>hxWPQE8jIw8jIw8-gt-8974107-2022-10-05T03:12:41.117Z::tf.xml</types1:EntryId>
       <types1:Name>u5c_tf_Customer_Loyalty</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description/>
@@ -11,9 +11,8 @@
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jon.snow.09.2022@sharklasers.com</types1:CreatedBy>
-      <types1:CreationDate>2022-10-05T02:55:10Z</types1:CreationDate>
-      <types1:ModifiedBy>jon.snow.09.2022@sharklasers.com</types1:ModifiedBy>
-      <types1:ModificationDate>2022-10-05T03:01:51Z</types1:ModificationDate>
+      <types1:CreationDate>2022-10-05T03:12:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -50,7 +49,7 @@
                </field>
                <field description="" name="Encrypt and FTP File" type="reference">
                   <options>
-                     <option name="referenceTo">$po:u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n</option>
+                     <option name="referenceTo">$po:u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ</option>
                   </options>
                </field>
             </tempFields>
@@ -75,7 +74,7 @@
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">u5a_mt_Customer_Loyalty_Calculation</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">bXnuPFoXDePbzjGOuEw163</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">94PUsHDfLMZfG1S8sdk4gE</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
@@ -114,7 +113,7 @@
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">u5b_mt_Customer_Loyalty_File</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">5JzGJzuJvehlJQeufMu0OU</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">4Yh9NtHjDBWcoM31VDEHod</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -163,18 +162,18 @@
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">u5c_mi_Customer_Loyalty_FTP</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1n5Fum6QxkulylhI3LQy6n</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">9DRi4aeuz2UladNx7pHSSZ</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MI_TASK</parameter>
                               <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
                               <parameter name="serviceProviderContextPath"
                                          source="constant"
                                          updatable="true">mitask/</parameter>
                               <parameter name="taskField" source="nested">
-                                 <operation source="field" to="u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n">temp.Encrypt and FTP File</operation>
+                                 <operation source="field" to="u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ">temp.Encrypt and FTP File</operation>
                                  <operation source="constant"
-                                            to="u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
+                                            to="u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
                                  <operation source="constant"
-                                            to="u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n/input[1]/CATEGORYGeneral[1]/targetConnectionType">AdvancedFTPV2</operation>
+                                            to="u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ/input[1]/CATEGORYGeneral[1]/targetConnectionType">AdvancedFTPV2</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -329,9 +328,9 @@
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
-                              displayName="u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n"
+                              displayName="u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ"
                               isByCopy="true"
-                              name="u5c-mi-Customer-Loyalty-FTP-1n5Fum6QxkulylhI3LQy6n">
+                              name="u5c-mi-Customer-Loyalty-FTP-9DRi4aeuz2UladNx7pHSSZ">
                   <description/>
                   <tags/>
                   <detail>
@@ -355,8 +354,8 @@
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>akHBv8rgD5DgYh7ep8K8Sk</types1:GUID>
+      <types1:GUID>3Oi9VmB9SiZexjLipKz6m8</types1:GUID>
       <types1:DisplayName>u5c_tf_Customer_Loyalty</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-10-05T03:01:55.629Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-10-05T03:12:48.093Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

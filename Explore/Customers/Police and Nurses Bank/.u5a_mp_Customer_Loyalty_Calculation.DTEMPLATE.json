@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "This is a loyalty calculation",
+        "description" : "This is a DevOps example",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }

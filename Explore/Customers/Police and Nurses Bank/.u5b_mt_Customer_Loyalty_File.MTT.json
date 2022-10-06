@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "7XuDxk2RdYufT0LeGbg2GI",
+    "id" : "hKZSx5OEigQltA488XW7CK",
     "name" : "u5b_mt_Customer_Loyalty_File",
     "type" : "MTT",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000P"
+        "repoHandle" : "011Q6C0Z00000000000R"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -84,7 +84,7 @@
     },
     "path" : "/SYS"
   }, {
-    "id" : "0AKcGfmCm7tbRGCJc7YLUZ",
+    "id" : "78a8nenM9W8fBhrVo6NROt",
     "name" : "u5b_mp_Customer_Loyalty_File",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -93,7 +93,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C17000000000019"
+        "repoHandle" : "011Q6C1700000000001B"
       },
       "contextAttributes" : [ {
         "name" : "id",

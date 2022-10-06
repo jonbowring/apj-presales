@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "9iDnDoqvQMBklSIShtE9uu",
+    "id" : "3xlspIum29gkh3SV0jMQUA",
     "name" : "u5c_mi_Customer_Loyalty_FTP",
     "type" : "MI_TASK",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "19051"
+        "repoHandle" : "19059"
       },
       "contextAttributes" : [ ],
       "additionalInfo" : {

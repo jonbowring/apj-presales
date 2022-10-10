@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "78a8nenM9W8fBhrVo6NROt",
+    "id" : "fy2PyB0OE0Fjho5AA9J64N",
     "name" : "u5b_mp_Customer_Loyalty_File",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C1700000000001B"
+        "repoHandle" : "011Q6C1700000000001D"
       },
       "contextAttributes" : [ {
         "name" : "id",

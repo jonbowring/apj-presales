@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "972lXz9XdU9c6PtF4mAVKP",
+    "id" : "6HZHY5tjfH7e1xq5KCGGCW",
     "name" : "u5a_mt_Customer_Loyalty_Calculation",
     "type" : "MTT",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C0Z00000000000S"
+        "repoHandle" : "011Q6C0Z00000000000U"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -24,6 +24,29 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
+    "id" : "8RktVy1cr6lgo2Obj3KFuC",
+    "name" : "u5a_mp_Customer_Loyalty_Calculation",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C1700000000001E"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This is an example of DevOps",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Customers/Police and Nurses Bank"
+  }, {
     "id" : "96jKUNzCa6ifyFNGedHCCW",
     "name" : "ANZ-Presales-Demo",
     "type" : "AgentGroup",
@@ -43,29 +66,6 @@
       }
     },
     "path" : "/SYS"
-  }, {
-    "id" : "42joJVdgvZAifzz6aaCqA7",
-    "name" : "u5a_mp_Customer_Loyalty_Calculation",
-    "type" : "DTEMPLATE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 0,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "011Q6C1700000000001C"
-      },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
-      "additionalInfo" : {
-        "description" : "This is an example of DevOps",
-        "contentType" : "JSON",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Customers/Police and Nurses Bank"
   }, {
     "id" : "9FEUsImL496gjLX618My63",
     "name" : "Snowflake_PNL_Bank",

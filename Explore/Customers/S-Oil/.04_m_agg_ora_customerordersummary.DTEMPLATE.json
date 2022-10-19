@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "26RJNAd3msei0GeG39i4ar",
+    "id" : "6iezXMlBWunlS6T1hsVjMH",
     "name" : "04_m_agg_ora_customerordersummary",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C1700000000001G"
+        "repoHandle" : "011Q6C1700000000001L"
       },
       "contextAttributes" : [ {
         "name" : "id",

@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "0Per59E0I7OcZazz3GTHKV",
+    "id" : "lEiJ732DhKkjSBZiU6geCN",
     "name" : "03_m_ora_dq_Customer_Cleaned",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,7 +9,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011Q6C1700000000001H"
+        "repoHandle" : "011Q6C1700000000001K"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -24,26 +24,6 @@
   },
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
-    "id" : "7ErENegpa2jgR2pKyXJ82t",
-    "name" : "IdentifyDuplicateEntities",
-    "type" : "DEDUPLICATE",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 1,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "7ErENegpa2jgR2pKyXJ82t"
-      },
-      "contextAttributes" : null,
-      "additionalInfo" : {
-        "description" : "Identify Duplicate Customer Entries",
-        "contentType" : "Binary",
-        "documentState" : "VALID"
-      }
-    },
-    "path" : "/Explore/Cloud Data Quality/Dedupe"
-  }, {
     "id" : "hWeTY2aigEDgWJ0pkVVAay",
     "name" : "rlsp_Standardise_Country_Name",
     "type" : "RULE_SPECIFICATION",
@@ -63,6 +43,26 @@
       }
     },
     "path" : "/Explore/Cloud Data Quality/Rule Specifications"
+  }, {
+    "id" : "7ErENegpa2jgR2pKyXJ82t",
+    "name" : "IdentifyDuplicateEntities",
+    "type" : "DEDUPLICATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "7ErENegpa2jgR2pKyXJ82t"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Identify Duplicate Customer Entries",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Data Quality/Dedupe"
   }, {
     "id" : "iykfOrBPckqftkZfaWluI6",
     "name" : "StandardizeCustomerStatusTier",

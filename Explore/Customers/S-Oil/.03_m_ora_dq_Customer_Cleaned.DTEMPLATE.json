@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "0Per59E0I7OcZazz3GTHKV",
+    "name" : "03_m_ora_dq_Customer_Cleaned",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C1700000000001H"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "7ErENegpa2jgR2pKyXJ82t",
+    "name" : "IdentifyDuplicateEntities",
+    "type" : "DEDUPLICATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "7ErENegpa2jgR2pKyXJ82t"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Identify Duplicate Customer Entries",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Data Quality/Dedupe"
+  }, {
+    "id" : "hWeTY2aigEDgWJ0pkVVAay",
+    "name" : "rlsp_Standardise_Country_Name",
+    "type" : "RULE_SPECIFICATION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hWeTY2aigEDgWJ0pkVVAay"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Set country to ISO Code 3 Value",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Data Quality/Rule Specifications"
+  }, {
+    "id" : "iykfOrBPckqftkZfaWluI6",
+    "name" : "StandardizeCustomerStatusTier",
+    "type" : "CLEANSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iykfOrBPckqftkZfaWluI6"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Data Quality/Cleanse"
+  }, {
+    "id" : "3BrwBudaFOcji52xeXE88w",
+    "name" : "AWS-Oracle-v1-RDS-DEMO-ANZ",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011Q6C0B00000000000B"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

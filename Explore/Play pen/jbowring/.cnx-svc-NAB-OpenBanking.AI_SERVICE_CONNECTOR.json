@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "4Tc1aWfhfGPhTO3DwfLzoX",
+    "name" : "cnx-svc-NAB-OpenBanking",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "m49WPZ8DfYLnzYL-gt-269176-2022-10-24T05:29:36.197Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "API sets created by the Australian Consumer Data Standards to meet the needs of the Consumer Data Right",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

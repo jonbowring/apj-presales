@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "evIeBFTApyhgd3gSElKR2u",
+    "name" : "Cloud Application Integration",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "This Project contains CAI assets such as Processes, Connections, Service Connections and end-to-end Sample Use cases\nReferences: https://network.informatica.com/community/informatica-network/products/cloud-integration/cloud-application-integration/content?filterID=contentstatus[published]~objecttype~objecttype[document]",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

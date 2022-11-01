@@ -1,0 +1,90 @@
+{
+  "objectInfo" : {
+    "id" : "7BhgmrohlM9iRc0RleRLYA",
+    "name" : "mt_Generate_and_Process_File_List",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH0Z00000000003X"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "eC0xsuQ8hk0iw11dLnM88G",
+    "name" : "mp_Generate_and_Process_File_List",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH17000000000052"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/Tag Based Deployment"
+  }, {
+    "id" : "9j8XyJyQrJwcT5xnKEMZMH",
+    "name" : "SecureAgent-FlatFile-v1-IICSFiles",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH0B00000000001D"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Flat File Folder in the Secure Agent Host",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "233IiZJPEDKlbG4TXdznel",
+    "name" : "Main Windows Secure Agent",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH2500000000000O"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

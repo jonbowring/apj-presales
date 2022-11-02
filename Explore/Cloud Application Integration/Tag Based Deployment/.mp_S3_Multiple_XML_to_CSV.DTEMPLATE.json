@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "5gWvylgOk6llkIsRGumdwu",
+    "id" : "cP4SX6vagmfg6catwq5YGU",
     "name" : "mp_S3_Multiple_XML_to_CSV",
     "type" : "DTEMPLATE",
     "metadata" : {
@@ -9,14 +9,14 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011KRH17000000000058"
+        "repoHandle" : "011KRH1700000000005A"
       },
       "contextAttributes" : [ {
         "name" : "id",
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : ".",
+        "description" : "What a great demo",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }

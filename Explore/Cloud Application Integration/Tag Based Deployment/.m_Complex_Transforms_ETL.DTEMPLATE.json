@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "7gJOsmCqG11kYkRHGepga1",
+    "name" : "m_Complex_Transforms_ETL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH1700000000005Q"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "6i2s6xbB8nqijPAb548mah",
+    "name" : "SalesForce-v1-HostedAgent-Dynamics-DH",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH0B00000000002Z"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "eM3hx1rIpYUbqUfQlAJfqR",
+    "name" : "AWS-Oracle-v1-RDS-IICS-ANZ",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011KRH0B000000000030"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Oracle RDS on AWS Sydney",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}
